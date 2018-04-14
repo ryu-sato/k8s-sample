@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress8080
+spec:
+  backend:
+    serviceName: s-youtrack
+    servicePort: 8080
+
