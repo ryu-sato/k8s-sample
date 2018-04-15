@@ -15,8 +15,31 @@ spec:
         app: youtrack
     spec:
       containers:
-      - name: youtrack
-        image: jetbrains/youtrack:2018.1.40341
-        ports:
-        - name: youtrack-port
-          containerPort: 8080
+        - name: youtrack
+          image: jetbrains/youtrack:2018.1.40341
+          ports:
+            - name: youtrack-port
+              containerPort: 8080
+          volumeMounts:
+#            - name: data
+#              mountPath: /opt/youtrack/data
+#            - name: config
+#              mountPath: /opt/youtrack/conf
+#            - name: backups
+#              mountPath: /opt/youtrack/backups
+#            - name: logs
+#              mountPath: /opt/youtrack/logs
+      volumes:
+#        - name: data
+#          persistentVolumeClaim:
+#            claimName: youtrack-data
+#        - name: config
+#          persistentVolumeClaim:
+#            claimName: youtrack-config
+#        - name: backups
+#          persistentVolumeClaim:
+#            claimName: youtrack-backups
+#        - name: logs
+#          persistentVolumeClaim:
+#            claimName: youtrack-logs
+
