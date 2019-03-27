@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-lb-fixip-fail
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 35.227.224.1
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+      nodePort: 30084
+  selector:
+    app: sample-app
+
